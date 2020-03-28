@@ -3,11 +3,64 @@
 
 int main()
 {
-	char binarynum[MAX], hexa[MAX];
+    int choice1;
+	printf("Press 1 for HEX => BIN convertion\nPress 2 for OCT => BIN convertion ");
+    scanf("%i", &choice1);
+    switch(choice1)
+    {
+        case 1 :
+            HexToDec(); break;
+        case 2 :
+            OctToDec(); break;
+    }
+}
+
+int OctToDec(){
+    char binarynum[MAX], octal[MAX];
+    long int i = 0;
+    printf("Enter the value for octal ");
+    scanf("%s", &octal);
+    printf("\nEquivalent binary value: ");
+
+    while (octal[i])
+    {
+        switch (octal[i])
+        {
+        case '0':
+            printf("000"); break;
+
+        case '1':
+            printf("001"); break;
+
+        case '2':
+            printf("010"); break;
+
+        case '3':
+            printf("011"); break;
+
+	     case '4':
+            printf("100"); break;
+
+        case '5':
+            printf("101"); break;
+
+        case '6':
+            printf("110"); break;
+
+        case '7':
+           printf("111"); break;
+        }
+        i++;
+    }
+    return 0;
+}
+
+int HexToDec(){
+    char binarynum[MAX], hexa[MAX];
     long int i = 0;
     printf("Enter the value for hexadecimal ");
-    scanf("%s", hexa);
-    printf("\n Equivalent binary value: ");
+    scanf("%s", &hexa);
+    printf("\nEquivalent binary value: ");
 
     while (hexa[i])
     {
